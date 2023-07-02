@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
+import AddEvents from './components/AddEvents';
+import {BrowserRouter , Route, Routes } from 'react-router-dom';
+import ListEvents from './components/ListEvents';
+import EventDetails from './components/EventDetails';
+import RegisterPage from './components/RegisterPage';
+import Payment from './components/Payment';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+
+    <BrowserRouter>
+   
+    <Routes>  
+      <Route path = "/"  element={<ListEvents/>} />
+      <Route path = "/edit-event/:id" element = {<AddEvents/>} />
+      <Route path = "/event" element= {<ListEvents/>} />
+      <Route path = "/add-event" element= {<AddEvents/>} />
+      
+      <Route path = "/viewevents/:id" element={<EventDetails/>} />
+      <Route path = "/registerpage/:id" element={<RegisterPage/>} />
+      <Route path  ="/payment" element={<Payment/>} />
+    </Routes>
+        
+   </BrowserRouter>
+
+   </div>
   );
 }
 
 export default App;
+
+
+
+
+

@@ -1,0 +1,46 @@
+.containerregi
+{
+    height:auto;
+    width: 90%;
+    left:  5%;
+    right: 5%;
+}
+h2{
+    text-align: center;
+    color: brown;
+}
+.apply_box
+{
+    width: 40%;
+    left:30%;
+    right: 30%;
+    padding:20px;
+    background-color: rgba(130, 231, 238, 0.393);
+    margin:aut0;
+    margin-top: 50px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px rgba(2, 2, 2, 0.418);
+
+}
+
+.inputinfo{
+    font-size: 22px;
+    size: 25px;
+
+}
+
+.inputinfo label
+{
+    color: black;
+    margin-right: 80px;
+    margin-bottom: 50px;
+    padding: auto;
+    font-size: 15px;
+    
+}
+
+.button-input input{
+    margin-right: 40px;
+    color: black;
+    height: 30px;
+}
