@@ -1,0 +1,85 @@
+.payment-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #gd {
+    margin-right: 7%;
+  }
+  
+  .cvv-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .expiry-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .expcvv-input-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .payments-options {
+    margin-bottom: 20px;
+  }
+  
+  .card-details-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .card-logo {
+    margin-bottom: 20px;
+  }
+  
+  .card-logo img {
+    max-width: 200px;
+    height: 80px;
+  }
+  
+  .card-details label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .card-details input {
+    padding: 12px;
+    font-size: large;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+    border: solid aqua;
+    
+  }
+  
+  
+  button {
+    padding: 10px 25px;
+    background-color: greenyellow;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  button:hover {
+    background-color: aqua;
+  }
+  
+  .paymentbgimg {
+    background-image: url('/src/logos/paymentpagebg.png');
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  

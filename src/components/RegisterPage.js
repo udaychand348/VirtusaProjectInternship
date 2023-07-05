@@ -13,6 +13,7 @@ const navigate =useNavigate();
   });
 
   const{attendeename,attendeemail,attendeephone,attendeeaddress} = data;
+  const [aid, setAttendeeId] = useState(null);
 
 
   const { id } = useParams();
@@ -57,8 +58,13 @@ const submithandler = async (e) => {
    
     if (response.ok)
      {
+      /*console.log('Data sent successfully');
+      navigate('/payment/'+ id);*/
+      const responseData = await response.json();
+      const { id: aid } = responseData;
+      setAttendeeId(aid);
       console.log('Data sent successfully');
-      navigate('/payment');
+      navigate(`/payment/${Id}/${aid}`);
     } 
     else 
     {
@@ -85,28 +91,30 @@ const submithandler = async (e) => {
         <div className='inputinfo' >
           <label> Enter  your Name - </label>
           <br/>
-          <input type="text" name="attendeename"  value={attendeename} onChange={handler}  />
+          <input type="text" name="attendeename"  value={attendeename || ''} onChange={handler}  />
            <br/>
            <br/>
 
           <label> Enter  your Mail - </label>
           <br/>
-          <input type="email" name="attendeemail" value={attendeemail} onChange={handler} />
+          <input type="email" name="attendeemail" value={attendeemail || ''} onChange={handler} />
           <br/>
           <br/>
 
           <label> Enter  your Phone - </label>
           <br/>
-          <input type="text" name="attendeephone" value={attendeephone} onChange={handler}/>
+          <input type="text" name="attendeephone" value={attendeephone || ''} onChange={handler}/>
           <br/>
           <br/>
 
           <label> Enter  your Address - </label>
           <br/>
-          <input type="text" name="attendeeaddress" value={attendeeaddress} onChange={handler}/>
+          <input type="text" name="attendeeaddress" value={attendeeaddress || ''} onChange={handler}/>
           <br/>
           <br/>
           <input type="hidden" name="id" value={Id} />
+          <input type="hidden" name="aid" value={aid || ''} />
+
           <br/>
 
           </div>

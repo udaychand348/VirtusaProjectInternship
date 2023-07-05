@@ -49,6 +49,8 @@ return(
                                     <button className="btn btn-default" onClick = {() => deleteEvent(event.id)}> Delete</button><div>
                                             <br/>
                 <button  className="btn-default block" onClick={()=> navigate('/viewevents/'+ event.id )} >View</button>
+                
+                <button  className="btn-default block" onClick={()=> navigate('/eventprice/'+ event.id )} >Set Price </button>
             </div>
 </div>
 </div>
