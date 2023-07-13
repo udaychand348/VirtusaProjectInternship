@@ -81,13 +81,14 @@ const submithandler = async (e) => {
 
 
   return (
-    <div>
+    <div className='regibody'>
+      <center>
       <h2> Event Registration </h2>
       <div className='containerregi'>
       <div className='apply_box'>
       
       <form onSubmit={submithandler} autoComplete='off'>
-        <center><h2>Event Details</h2></center>
+        <center><h2>Enter Attendee Details</h2></center>
         <div className='inputinfo' >
           <label> Enter  your Name - </label>
           <br/>
@@ -129,7 +130,7 @@ const submithandler = async (e) => {
       </form>
       </div>
       </div>
-      
+      </center>
     </div>
   )
 }

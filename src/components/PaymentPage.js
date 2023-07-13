@@ -114,6 +114,9 @@ function PaymentPage ()
     console.log("Payment Successful...")
     
     })
+  
+
+
   };
 
 
@@ -170,7 +173,7 @@ function PaymentPage ()
             <td>
               <input
                 className="ticket-counter-input"
-                type="number"
+                type="number" min={0}
                 value={count}
                 onChange={handleCountChange}
               />
