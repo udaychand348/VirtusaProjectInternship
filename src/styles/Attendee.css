@@ -1,0 +1,55 @@
+.getAllAttendees-body{
+
+    text-align: center;
+    font-family:monospace;
+    background-color:#C5DFF8;
+    height: 80vh;
+  
+  
+  }
+  .getAllAttendees-heading{
+    font-size:40px;
+    font-weight: bold;
+    font-family:monospace;
+    text-align: center;
+  }
+  
+  .getAllAttendees-table{
+    font-size: 30px;
+    
+  }
+  
+  thead.getAllAttendees-table-head{
+    background-color: black;
+    color: white;
+  }
+  
+  .getAllAttendees-table{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+  
+  }
+  
+  .getAllAttendees-td{
+    padding: 10px;
+    background-color: blanchedalmond;
+    
+  }
+  
+  .getAllAttendees-delete-button{
+    height: 25px;
+    width: 75px;
+    font-family:monospace;
+    font-size:1rem;
+    border-radius: 15px;
+    border-color: black;
+    background-color: white;
+  }
+   
+  .getAllAttendees-delete-button:hover{
+    color: white;
+    background-color: black;
+    transition-duration: .5s;
+  }

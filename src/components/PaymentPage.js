@@ -4,11 +4,15 @@ import paypallogo from '../logos/paypal-logo.png';
 import cdcardlogo from '../logos/cdcard-logo.png';
 import upilogo from '../logos/upi-logo.png';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 
 function PaymentPage () 
 {
-  const {id,aid} =useParams();
+  //const {id,aid} =useParams();
+
+  const token =localStorage.getItem('token');
+  const id = Number(localStorage.getItem('eventId'));
+  const aid = Number(localStorage.getItem('attendeeId'));
   
   console.log("event id is",id);
   console.log("attendee id is",aid);
@@ -107,7 +111,11 @@ function PaymentPage ()
     console.log(payment)
     fetch("http://localhost:8088/payment/save",{
       method:"POST",
-      headers:{"Content-Type":"application/json"},
+      headers:
+      {
+        "Content-Type":"application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body:JSON.stringify(payment)
 
     }).then(()=>{
@@ -115,7 +123,6 @@ function PaymentPage ()
     
     })
   
-
 
   };
 
@@ -139,15 +146,20 @@ function PaymentPage ()
 
     fetch('http://localhost:8088/ticket', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers:
+       { 
+        'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`, 
+    },
       body: JSON.stringify(ticketData),
     })
       .then((response) => response.json())
       .then((data) => {
         const tid = data.id;
         console.log("ticket id",tid);
+        localStorage.setItem('ticketId',tid);
         console.log(data);
-        navigate('/ticket/'+id+'/'+aid+'/'+tid);
+        navigate('/ticket');
       })
       .catch((error) => {
       

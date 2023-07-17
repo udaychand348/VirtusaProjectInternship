@@ -1,0 +1,97 @@
+.main-content {
+    flex: 1;
+    height: 100vh;
+    /* padding: 20px; */
+  }
+  
+  .dashboard {
+    margin-top: 20px;
+    padding: 20px;
+    background-image: linear-gradient(to right, #6c63ff, #aa73ff);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  .dashboard h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .card-containeradmin {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .cardadmin {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .card-heading {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .card .logo {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card .logo svg {
+    fill: #fff;
+    margin-right: 10px;
+  }
+  
+  .card .event-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card .event-details {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .card.card1 {
+    background: linear-gradient(to bottom right, #1f4068, #2e294e);
+  }
+  
+  .card.card2 {
+    background: linear-gradient(to bottom right, #9d50bb, #6e48aa);
+  }
+  
+  .card.card3 {
+    background: linear-gradient(to bottom right, #00b4db, #0083b0);
+  }
+  
+  .card.card4 {
+    background: linear-gradient(to bottom right, #6a82fb, #485696);
+  }
+  
+  .card.card5 {
+    background: linear-gradient(to bottom right, #ff512f, #dd2476);
+  }
+  

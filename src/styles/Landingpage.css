@@ -1,0 +1,19 @@
+.get-started-button{
+    padding: 10px 70px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+  
+  .get-started-button:hover {
+    background-color: #0069d9;
+  }
+  
+  .get-started-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  }

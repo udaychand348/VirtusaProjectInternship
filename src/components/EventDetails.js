@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import '../styles/EventDetails.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -7,15 +7,24 @@ const EventDetails = () =>
 {
   const navigate=useNavigate();
     const[data,setEventData]=useState([]);
+    const token =localStorage.getItem('token');
 
-    const {id}=useParams();
+    //const {id}=useParams();
+    const id = Number(localStorage.getItem('eventId'));
     console.log(id);
 
     useEffect(() => {
         const fetchEventDetails = async () => {
           try
            {
-            const response = await fetch(`http://localhost:8088/event/${id}`);
+            const response = await fetch(`http://localhost:8088/event/${id}`,{
+              method: 'GET',
+              headers:
+               {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+              },
+            });
             const jsonData = await response.json();
             setEventData(jsonData);
           } 
@@ -25,7 +34,7 @@ const EventDetails = () =>
           }
         };
         fetchEventDetails();
-      },[id]);
+      },[id,token]);
 
 
       return(
@@ -65,7 +74,7 @@ const EventDetails = () =>
             </tbody>
           </table>
          
-          <button className='buttonregiback'   onClick={() => navigate('/registerpage/'+data.id)}>Register</button>
+          <button className='buttonregiback'   onClick={() => navigate('/registerpage')}>Register</button>
           <button className='buttonregiback'    onClick={() => navigate('/event')}>Back</button>
           
       </center>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import bookinglogo from '../logos/success.png';
-import {  useNavigate, useParams } from 'react-router-dom';
+import {  useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -8,10 +8,15 @@ import jsPDF from 'jspdf';
 import '../styles/TicketPage.css'
 const TicketPage = () =>
 {
-  const{id, aid,tid}  = useParams();
+  //const{id, aid,tid}  = useParams();
+  const id = Number(localStorage.getItem('eventId'));
+  const aid = Number(localStorage.getItem('attendeeId'));
+  const tid = Number(localStorage.getItem('eventId'));
   console.log("Ticket Page event id",id);
   console.log("Ticket Page attendee id",aid);
   console.log("Ticket page tid is",tid);
+
+  const token =localStorage.getItem('token');
 
   const navigate = useNavigate();
   //const location = useLocation();
@@ -44,25 +49,53 @@ const TicketPage = () =>
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8088/event/${id}`);
+        const response = await fetch(`http://localhost:8088/event/${id}`,{
+          method: 'GET',
+          headers:
+           {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+        );
         const jsonData = await response.json();
         setEvent(jsonData);
-      } catch (error) {
+      } 
+      catch (error) 
+      {
         console.log(error);
       }
     };
     const fetchAttendeeDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8088/attendee/attendee/${aid}`);
+        const response = await fetch(`http://localhost:8088/attendee/attendee/${aid}`,
+        {
+          method: 'GET',
+          headers:
+           {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
         const jsonData = await response.json();
         setAttendee(jsonData);
-      } catch (error) {
+      } 
+      catch (error)
+       {
         console.log(error);
       }
     };
     const fetchTicketDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8088/ticket/ticket/${tid}`);
+        const response = await fetch(`http://localhost:8088/ticket/ticket/${tid}`,{
+          method: 'GET',
+          headers:
+           {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
         const jsonData = await response.json();
         setTicket(jsonData);
       } catch (error) {
@@ -73,7 +106,7 @@ const TicketPage = () =>
     fetchEventDetails();
     fetchAttendeeDetails();
     fetchTicketDetails();
-  }, [id, aid,tid]);
+  }, [id, aid,tid,token]);
  
  
 

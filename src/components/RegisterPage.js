@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import '../styles/RegisterPage.css'
 const RegisterPage = () => 
 {
@@ -11,14 +11,16 @@ const navigate =useNavigate();
       attendeephone:'',
       attendeeaddress:'',
   });
+  const token =localStorage.getItem('token');
 
   const{attendeename,attendeemail,attendeephone,attendeeaddress} = data;
   const [aid, setAttendeeId] = useState(null);
 
 
-  const { id } = useParams();
-  const Id = parseInt(id);
+  // const { id } = useParams();
+  // const Id = parseInt(id);
     //console.log(id);
+  const Id = Number(localStorage.getItem('eventId'));
 
 const handler = e =>
 {
@@ -51,6 +53,7 @@ const submithandler = async (e) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(attendeedata),
     }
@@ -64,7 +67,8 @@ const submithandler = async (e) => {
       const { id: aid } = responseData;
       setAttendeeId(aid);
       console.log('Data sent successfully');
-      navigate(`/payment/${Id}/${aid}`);
+      localStorage.setItem('attendeeId',aid);
+      navigate('/payment');
     } 
     else 
     {
