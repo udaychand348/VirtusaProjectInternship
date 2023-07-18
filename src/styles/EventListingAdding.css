@@ -1,25 +1,24 @@
-.search-container {
+.event-search-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.search-input {
+.event-search-input {
   width: 900px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
- 
 }
 
-.search-input:focus {
+.event-search-input:focus {
   outline: none;
   border-color: #0066cc;
   box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
 }
 
-.event-container {
+.event-container{
   position: relative;
   background-image: url('https://img.freepik.com/free-vector/futuristic-dark-wavy-background_23-2148400222.jpg');
   background-size: cover;
@@ -27,7 +26,7 @@
   height:100vh;
 }
 
-.card-container{
+.event-card-container{
   width:100vw;
   display:flex;
   justify-content:space-around;
@@ -36,18 +35,18 @@
  
 }
 
-.card{
+.event-card{
   display:flex;
   flex-direction:column;
   width:400px;
   margin-bottom:120px;
 }
 
-.card>div{
+.event-card>div{
   box-shadow:0 15px 20px 0 rgba(0,0,0,0.5);
 }
 
-.card-text{
+.event-card-text{
   margin:-30px 25px;
   margin-bottom:-50px;
   height:320px;
@@ -57,24 +56,24 @@
   padding:10px;
 }
 
-.card-title{
+.event-card-title{
   font-size:2.2rem;
   margin-bottom:20px;
   margin-top:5px;
   font-style:italic;
 }
-.card-body{
+.event-card-body{
   font-size:1.25rem;
   color:rgb(251, 198, 218);
   font-family: 'Dekko';
   text-align: center;
 }
-.box{
+.event-box{
   width:250px;
   height:110px;
   border:4px solid rgb(179, 152, 170);
 }
-.card-price{
+.event-card-price{
   width:70px;
   height:70px;
   background-color:rgb(179, 152, 170);
@@ -86,7 +85,7 @@
   align-items:center;
 }
 
-.btn{
+.event-btn{
   background-color:transparent;
   padding:10px 20px;
   transition:all 0.3s ease;
@@ -96,11 +95,12 @@
   color:goldenrod;
 }
 
-.btn-default{
+
+.event-btn-default{
   border:2px solid rgb(87, 43, 89);
 }
 
-.btn-default:hover{
+.event-btn-default:hover{
   background-color:rgb(87, 43, 89);
 }
 .add-event{
@@ -110,13 +110,13 @@
 a{
   text-decoration: none;
 }
-.card .block {
+.event-card-block {
   border:2px solid rgb(87, 43, 89);
 }
-.card .block:hover{
+.event-card-block:hover{
   background-color:rgb(87, 43, 89);
 }
-.block{
+.event-block{
   display: block;
   width: 100%;
  
@@ -131,7 +131,7 @@ a{
   text-align: center;
 }
 
-.form-card{
+.event-form-card{
   font-family:Bradley Hand, cursive ;
 		margin:  0;
 		width:   60%;
@@ -148,15 +148,15 @@ a{
 		border-radius: 10px;
 		border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.form-card-body{
+.event-form-card-body{
   font-size:1.5rem;
   color:rgb(53, 3, 25);
 }
-.form-group{
+.event-form-group{
   margin:40px;
   text-align:center;
 }
-.form-card-body input{
+.event-form-card-body input{
   padding:6px;
   width:300px;
   border:4px solid rgb(221, 70, 103) ;
@@ -164,7 +164,7 @@ a{
   color:whitesmoke;
 }
 
-.img-section{
+.event-img-section{
 	background: url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80");
 	min-height:900px; 
 	background-repeat: no-repeat;
@@ -176,7 +176,7 @@ a{
 
     
 }
-.img-section::before{
+.event-img-section::before{
    content:'';
 		position: absolute;
 		top:0;
@@ -187,3 +187,5 @@ a{
 		opacity:0.6; 
         
 }
+
+

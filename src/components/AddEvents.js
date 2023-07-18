@@ -86,47 +86,47 @@ const AddEvents = () => {
         <div>
            <br /><br />
           
-                <div className = "img-section card">
-                    <div className = "form-card">
+                <div className = "event-img-section card">
+                    <div className = "event-form-card">
                        {
                            value()
                        }
-                        <div className = "form-card-body">
+                        <div className = "event-form-card-body">
                             <form>
                             
-                                <div className = "form-group">
+                                <div className = "event-form-group">
                                     <label htmlFor= "name"> Name </label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter the event name"
                                         name = "name"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {name}
                                         onChange = {(e) => setName(e.target.value)}
                                     >
                                     </input>
                                 </div>
                                
-                                <div className = "form-group">
+                                <div className = "event-form-group">
                                     <label htmlFor= "description">Description</label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter the description"
                                         name = "description"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {description}
                                         onChange = {(e) => setDescription(e.target.value)}
                                     >
                                     </input>
                                 </div>
 
-                                <div className = "form-group ">
+                                <div className = "event-form-group ">
                                     <label htmlFor= "startdate"> StartDate </label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter the startdate in yyyy-mm-dd"
                                         name = "startdate"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {startDate}
                                         onChange = {(e) => setStartDate(e.target.value)}
                                     >
@@ -134,13 +134,13 @@ const AddEvents = () => {
                                 </div>
 
 
-                                <div className = "form-group ">
+                                <div className = "event-form-group ">
                                     <label htmlFor= "enddate"> EndDate </label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter the enddate in yyyy-mm-dd"
                                         name = "enddate"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {endDate}
                                         onChange = {(e) => setEndDate(e.target.value)}
                                     >
@@ -148,13 +148,13 @@ const AddEvents = () => {
                                 </div>
 
 
-                                <div className = "form-group">
+                                <div className = "event-form-group">
                                     <label htmlFor = "location"> Location </label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter the location"
                                         name = "location"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {location}
                                         onChange = {(e) => setLocation(e.target.value)}
                                     >
@@ -162,21 +162,21 @@ const AddEvents = () => {
                                 </div>
                                 
                                 
-                                <div className = "form-group">
+                                <div className = "event-form-group">
                                     <label htmlFor= "totalTicket"> TotalTickets</label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter total no.of.tickets"
                                         name = "totalTicket"
-                                        className = "form-control"
+                                        className = "event-form-control"
                                         value = {totalTicket}
                                         onChange = {(e) => setTotalTickets(Number(e.target.value))}
                                     >
                                     </input>
                                 </div>
 
-                                <button className = "btn btn-default" onClick = {(e) => saveOrUpdateEvent(e)} >Submit </button>
-                                <Link to="/event" className="btn btn-default" style={{marginLeft:20+'px'}}> Cancel </Link>
+                                <button className = "event-btn event-btn-default" onClick = {(e) => saveOrUpdateEvent(e)} >Submit </button>
+                                <Link to="/event" className="event-btn event-btn-default" style={{marginLeft:20+'px'}}> Cancel </Link>
                             </form>
 
                         </div>

@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import eventService from '../services/eventservice'
 import { useNavigate } from 'react-router-dom'
+import '../styles/EventListingAdding.css'
+
+
 
 const ListEvents = () => {
   const navigate=useNavigate();
@@ -55,35 +58,35 @@ return(
 
 <> 
 <div className="event-container">
-    <div className="search-container">
+    <div className="event-search-container">
   <input
     type="text"
     value={searchQuery}
     onChange={handleSearch}
-    className="search-input"
+    className="event-search-input"
     placeholder="Search by event, date, or location"
   />
 </div>
-<div className="card-container">
+<div className="event-card-container">
  {filteredEvents.map(event=>(
-<div className="card" key={event.id}>
+<div className="event-card" key={event.id}>
   
-  <div className="card-text">
+  <div className="event-card-text">
    
-    <h2 className="card-title">{event.name}</h2>
+    <h2 className="event-card-title">{event.name}</h2>
 <div className="box">
-    <p className="card-body">DATE: {event.startDate}</p>
-    <p className="card-body">LOCATION: {(event.location)} </p>
+    <p className="event-card-body">DATE: {event.startDate}</p>
+    <p className="event-card-body">LOCATION: {(event.location)} </p>
     </div>
   <hr/>
   
  
    
-  { isAdmin &&<Link className="btn btn-info" to={`/edit-event/${event.id}`} ><button className="btn btn-default">Update</button></Link>}
-  { isAdmin &&  <button className="btn btn-default" onClick = {() => deleteEvent(event.id)}> Delete</button>} <div>
+  { isAdmin &&<Link className="event-btn" to={`/edit-event/${event.id}`} ><button className="event-btn event-btn-default">Update</button></Link>}
+  { isAdmin &&  <button className="event-btn event-btn-default" onClick = {() => deleteEvent(event.id)}> Delete</button>} <div>
                                             <br/>
-{/* <button  className="btn-default block" onClick={()=> navigate('/viewevents/'+ event.id )} >View</button> */}
-<button className="btn-default block" onClick={() => {
+
+<button className="event-btn-default event-block" onClick={() => {
   localStorage.setItem('eventId', event.id);
   navigate('/viewevents');
 }}>View</button>
@@ -97,8 +100,8 @@ return(
 
  
 { isAdmin &&<div className="add-event">
-<Link className="btn btn-info" to ="/add-event">
-<button  className="btn btn-default">Add Event</button>
+<Link className="event-btn event-btn-info" to ="/add-event">
+<button  className="event-btn event-btn-default">Add Event</button>
  
 </Link>
 </div>
