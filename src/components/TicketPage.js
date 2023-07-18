@@ -143,10 +143,6 @@ const TicketPage = () =>
             <span className="ticket-value">{totalPrice}</span>
           </div>
           <div className="ticket-field">
-            <span className="ticket-label">Tickets:</span>
-            <span className="ticket-value">{totalPrice /  300 }</span>
-          </div>
-          <div className="ticket-field">
             <span className="ticket-label">Attendee Name:</span>
             <span className="ticket-value">{attendee.name}</span> 
           </div>

@@ -25,8 +25,8 @@ function PaymentPage ()
   const [upi, setUPI] = useState('');
   const[paypalEmail, setPaypalEmail] = useState('');
   const[paypalPassword, setPaypalPassword] = useState('');
-  const [count, setCount] = useState(0);
-
+  //const [count, setCount] = useState(0);
+  
   const navigate = useNavigate();
 
 
@@ -86,16 +86,18 @@ function PaymentPage ()
   };
 
   const ticketPrice = 300;
+  const count = 1;
 
-  const totalPrice = count * ticketPrice;
+  //const totalPrice = count * ticketPrice;
+  const totalPrice = ticketPrice;
   localStorage.setItem('totalPrice',totalPrice);
 
   
 
-  const handleCountChange = (event) => {
-    const newCount = parseInt(event.target.value, 10);
-    setCount(newCount);
-  };
+  // const handleCountChange = (event) => {
+  //   const newCount = parseInt(event.target.value, 10);
+  //   setCount(newCount);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -208,14 +210,14 @@ function PaymentPage ()
       });
   };
   
-  const updateTicketCount = (eventid, ticketCount) => {
+  const updateTicketCount = (eventid,count) => {
     fetch(`http://localhost:8088/event/tickets/${eventid}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify( parseInt(ticketCount) ),
+      body: JSON.stringify( parseInt(count) ),
     })
       .then((response) => {
         if (response.ok) {
@@ -235,7 +237,7 @@ function PaymentPage ()
 
   return (
     <div className="paymentbgimg">
-    <div className="ticket-counter">
+    {/* <div className="ticket-counter">
       <table className="ticket-counter-table">
         <tbody>
           <tr>
@@ -257,7 +259,7 @@ function PaymentPage ()
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> */}
     <div className="payment-page">
       <h1>Payment Page</h1>
       <h2 id="gd">Grand Total: {totalPrice} </h2>

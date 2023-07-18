@@ -14,6 +14,7 @@ const AdminDashboard = () => {
         <AdminCard path="/attendees" background={abstract1} heading="View All Attendees" />
         <AdminCard path="/event" background={abstract2} heading="View All Events" />
         <AdminCard path="/graph" background={abstract2} heading="View Bar Graph" />
+        <AdminCard path="/graph2" background={abstract2} heading="View Pie Graph" />
       </div>
     </div>
   );

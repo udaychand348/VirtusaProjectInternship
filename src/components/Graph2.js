@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Bar } from 'react-chartjs-2';
+
 import { Chart } from 'chart.js/auto';
+import { Pie } from 'react-chartjs-2';
 Chart.register()
 
-const Graph = () => {
+const Graph2 = () => {
   const [events, setEvents] = useState([]);
   const token =localStorage.getItem('token');
 
@@ -28,18 +29,18 @@ const Graph = () => {
 
   const eventData = events.map((event) => ({
     eventName: event.name,
-    attendeesCount: event.attendees.length,
+    ticketsCount: event.tickets.length,
   }));
 
-  const eventNames = eventData.map((data) => data.eventName);
-  const attendeesCount = eventData.map((data) => data.attendeesCount);
+  const eN = eventData.map((data) => data.eventName);
+  const tC = eventData.map((data) => data.ticketsCount);
 
   const data = {
-    labels: eventNames,
+    labels: eN,
     datasets: [
       {
-        label: 'Attendees Count ',
-        data: attendeesCount,
+        label: 'Tickets Count ',
+        data: tC,
         backgroundColor: 'brown',
         hoverBackgroundColor: 'yellow',
       },
@@ -55,7 +56,7 @@ const Graph = () => {
      title:
      {
         display:true,
-        title:'Events and Attendees Data'
+        title:'Events and Tickets Data'
      },
    }
     
@@ -64,11 +65,11 @@ const Graph = () => {
 
   return (
     <div style={{"height":400,"width":800,margin:"auto"}}>
-      <h2>Event Attendees Graph</h2>
-      <Bar data={data} options={options} />
+      <h2>Event Tickets Graph</h2>
+      <Pie data={data} options={options} />
     </div>
   );
 };
 
-export default Graph;
+export default Graph2;
 

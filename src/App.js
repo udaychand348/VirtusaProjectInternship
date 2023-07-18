@@ -10,6 +10,7 @@ import Logout from './components/Logout.js';
 import AdminDashboard from './components/AdminDashboard.js'
 import Attendees from './components/Attendees.js';
 import Graph from './components/Graph.js';
+import Graph2 from './components/Graph2.js';
 
 import AddEvents from './components/AddEvents.js'
 import ListEvents from './components/ListEvents.js'
@@ -70,6 +71,7 @@ const App = () => {
               <Route path="/admindashboard"  element={isAdmin ? <AdminDashboard /> : <Navigate to="/home" />} />
               <Route path="/attendees" element={<Attendees/>} />
               <Route path="/graph" element={<Graph />} />
+              <Route path="/graph2" element={<Graph2 />} />
 
               <Route path = "/edit-event/:id" element = {<AddEvents/>} />
               <Route path = "/event" element= {<ListEvents/>} />
