@@ -88,6 +88,9 @@ function PaymentPage ()
   const ticketPrice = 300;
 
   const totalPrice = count * ticketPrice;
+  localStorage.setItem('totalPrice',totalPrice);
+
+  
 
   const handleCountChange = (event) => {
     const newCount = parseInt(event.target.value, 10);
@@ -130,8 +133,46 @@ function PaymentPage ()
 
 
 
-  const handleTicket = () =>
-  {
+  // const handleTicket = () =>
+  // {
+  //   // Generate ticket logic
+  //   const ticketData = {
+  //     event: {
+  //       id: parseInt(id),
+  //     },
+  //     attendee: {
+  //       id: parseInt(aid),
+  //     },
+  //     price: parseFloat(totalPrice),
+  //     status: 'Booked',
+  //   };
+
+  //   fetch('http://localhost:8088/ticket', {
+  //     method: 'POST',
+  //     headers:
+  //      { 
+  //       'Content-Type': 'application/json',
+  //     Authorization: `Bearer ${token}`, 
+  //   },
+  //     body: JSON.stringify(ticketData),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const tid = data.id;
+  //       console.log("ticket id",tid);
+  //       localStorage.setItem('ticketId',tid);
+  //       console.log(data);
+  //       navigate('/ticket');
+  //     })
+  //     .catch((error) => {
+      
+  //       console.log(error);
+  //     });
+  
+    
+  // };
+
+  const handleTicket = () => {
     // Generate ticket logic
     const ticketData = {
       event: {
@@ -143,31 +184,54 @@ function PaymentPage ()
       price: parseFloat(totalPrice),
       status: 'Booked',
     };
-
+  
     fetch('http://localhost:8088/ticket', {
       method: 'POST',
-      headers:
-       { 
+      headers: {
         'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`, 
-    },
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(ticketData),
     })
       .then((response) => response.json())
       .then((data) => {
         const tid = data.id;
-        console.log("ticket id",tid);
-        localStorage.setItem('ticketId',tid);
+        console.log('ticket id', tid);
+        localStorage.setItem('ticketId', tid);
         console.log(data);
+        // Update the ticket count in the backend
+        updateTicketCount(id, count);
         navigate('/ticket');
       })
       .catch((error) => {
-      
         console.log(error);
       });
-  
-    
   };
+  
+  const updateTicketCount = (eventid, ticketCount) => {
+    fetch(`http://localhost:8088/event/tickets/${eventid}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify( parseInt(ticketCount) ),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Ticket count updated successfully');
+        } else {
+          console.error('Error updating ticket count:', response.status);
+        }
+      })
+      .catch((error) => {
+        console.error('Error updating ticket count:', error);
+      });
+  };
+  
+
+
+
 
   return (
     <div className="paymentbgimg">

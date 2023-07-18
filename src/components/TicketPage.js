@@ -12,9 +12,14 @@ const TicketPage = () =>
   const id = Number(localStorage.getItem('eventId'));
   const aid = Number(localStorage.getItem('attendeeId'));
   const tid = Number(localStorage.getItem('eventId'));
-  console.log("Ticket Page event id",id);
-  console.log("Ticket Page attendee id",aid);
-  console.log("Ticket page tid is",tid);
+  const totalPrice = Number(localStorage.getItem('totalPrice'));
+
+
+
+
+  // console.log("Ticket Page event id",id);
+  // console.log("Ticket Page attendee id",aid);
+  // console.log("Ticket page tid is",tid);
 
   const token =localStorage.getItem('token');
 
@@ -135,7 +140,11 @@ const TicketPage = () =>
           </div>
           <div className="ticket-field">
             <span className="ticket-label">Price :</span>
-            <span className="ticket-value">{ticket.price}</span>
+            <span className="ticket-value">{totalPrice}</span>
+          </div>
+          <div className="ticket-field">
+            <span className="ticket-label">Tickets:</span>
+            <span className="ticket-value">{totalPrice /  300 }</span>
           </div>
           <div className="ticket-field">
             <span className="ticket-label">Attendee Name:</span>
