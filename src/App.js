@@ -20,6 +20,7 @@ import RegisterPage from './components/RegisterPage.js'
 import TicketPage from './components/TicketPage.js'
 
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import SalesReport from './components/SalesReport.js';
 
 
 
@@ -72,8 +73,10 @@ const App = () => {
               <Route path="/attendees" element={<Attendees/>} />
               <Route path="/graph" element={<Graph />} />
               <Route path="/graph2" element={<Graph2 />} />
+              <Route path="/salesreport" element={<SalesReport />} />
 
               <Route path = "/edit-event/:id" element = {<AddEvents/>} />
+              {/* <Route path = "/edit-event" element = {<AddEvents/>} /> */}
               <Route path = "/event" element= {<ListEvents/>} />
               <Route path = "/add-event" element= {<AddEvents/>} />
               

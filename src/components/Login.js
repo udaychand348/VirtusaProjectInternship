@@ -60,7 +60,7 @@ const Login = ({setToken}) =>
       {
       isloggedIn? (<h2> successfully Logged into the application </h2>) :
       (
-      <Form onSubmit={handleSubmit} autoComplete='off'>
+      <Form onSubmit={handleSubmit} autoComplete='off' style={{width:"40%"}} className='container'>
 
 
         <Form.Group className="mb-3" controlId="formBasicEmail">

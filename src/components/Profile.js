@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import abstract1 from '../logos/abstract1.jpg'; 
+
 const Profile = () => {
   const [data, setData] = useState([]);
 
@@ -48,7 +50,15 @@ const Profile = () => {
   }, [userid,token]);
 
   return (
-    <div>
+    <div  style={{
+      backgroundImage: `url(${abstract1})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh', 
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
       <center>
         <h2> User Details </h2>
 

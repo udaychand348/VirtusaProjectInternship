@@ -338,7 +338,7 @@ function PaymentPage ()
                 placeholder='07/25'
                 value={expirationDate}
                 onChange={handleExpirationDateChange}
-                style={{ width: '40px', fontSize: '14px' }}
+                style={{ width: '70px', fontSize: '14px' }}
               />
             </label>
             </div>
@@ -350,7 +350,7 @@ function PaymentPage ()
                 placeholder='007'
                 value={cvv}
                 onChange={handleCVVChange}
-                style={{ width: '40px', fontSize: '14px' }}
+                style={{ width: '70px', fontSize: '14px' }}
                 maxLength="4"
               />
             </label>

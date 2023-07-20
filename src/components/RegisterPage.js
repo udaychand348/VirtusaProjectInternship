@@ -127,7 +127,7 @@ const submithandler = async (e) => {
           <div className='button-input'> 
           <input type='submit' name="Submit"  />
           <input type="reset" name="Reset" />
-          <input type="button" value="Back" onClick={() => navigate('/')}  />
+          <input type="button" value="Back" onClick={() => navigate('/viewevents')}  />
           </div>
 
        

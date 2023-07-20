@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import abstract1 from '../logos/abstract1.jpg'; 
+
 
 const EditProfile = () => 
 {
@@ -59,6 +61,11 @@ const EditProfile = () =>
   const submithandler = async(e) =>
   {
     e.preventDefault();
+    if(phone.length>10 || phone.length<10)
+    {
+      alert("phone Number Should be 10 digits");
+      return;
+    }
     const User=
       {
         firstName:first,
@@ -99,7 +106,15 @@ const EditProfile = () =>
   }
 
   return (
-    <div>
+    <div  style={{
+      backgroundImage: `url(${abstract1})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '100vh', // Set minimum height to cover the entire viewport
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
       <center>
         <h2>Edit  User Details </h2>
 

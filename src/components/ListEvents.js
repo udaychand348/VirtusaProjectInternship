@@ -82,8 +82,18 @@ return(
   
  
    
-  { isAdmin &&<Link className="event-btn" to={`/edit-event/${event.id}`} ><button className="event-btn event-btn-default">Update</button></Link>}
-  { isAdmin &&  <button className="event-btn event-btn-default" onClick = {() => deleteEvent(event.id)}> Delete</button>} <div>
+  { isAdmin &&<Link  to={`/edit-event/${event.id}`} ><button className="event-btn event-btn-default">Update</button></Link>}
+  {/* { isAdmin &&   <button className="event-btn event-btn-default" onClick={()=>{localStorage.setItem('eid',event.id);navigate('/edit-event')}}>Update</button>} */}
+  { isAdmin &&  <button className="event-btn event-btn-default" onClick = {() => deleteEvent(event.id)}> Delete</button>}
+  { isAdmin &&  <button className="event-btn event-btn-default" 
+           onClick = {() => {localStorage.setItem('sid',event.id); navigate('/salesreport');}}>
+            Sales Report
+            </button>
+  }
+  
+  
+  
+   <div>
                                             <br/>
 
 <button className="event-btn-default event-block" onClick={() => {

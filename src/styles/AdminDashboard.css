@@ -5,12 +5,13 @@
   }
   
   .dashboard {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 20px;
-    background-image: linear-gradient(to right, #6c63ff, #aa73ff);
-    border-radius: 10px;
+    background-image: linear-gradient(to right, #63ffefba, #d773ffa3);
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #fff;
+    height: 130dvh;
   }
   
   .dashboard h1 {

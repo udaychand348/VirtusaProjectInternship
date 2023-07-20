@@ -23,7 +23,7 @@
   background-image: url('https://img.freepik.com/free-vector/futuristic-dark-wavy-background_23-2148400222.jpg');
   background-size: cover;
   background-position: right ;
-  height:100vh;
+  height:170vh;
 }
 
 .event-card-container{
@@ -39,6 +39,7 @@
   display:flex;
   flex-direction:column;
   width:400px;
+  height: auto;
   margin-bottom:120px;
 }
 
@@ -49,7 +50,7 @@
 .event-card-text{
   margin:-30px 25px;
   margin-bottom:-50px;
-  height:320px;
+  height:400px;
   width:270px;
   background-color:#1D1C20;
   color:#fff;
@@ -70,7 +71,7 @@
 }
 .event-box{
   width:250px;
-  height:110px;
+  height:150px;
   border:4px solid rgb(179, 152, 170);
 }
 .event-card-price{
@@ -93,6 +94,8 @@
   font-size:18px;
   border-radius:30px;
   color:goldenrod;
+  margin-bottom: 15px;
+  margin-right: 10px;
 }
 
 

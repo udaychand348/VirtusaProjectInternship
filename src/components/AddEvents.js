@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Link,  useNavigate, useParams } from 'react-router-dom';
+import {Link,  useNavigate,useParams } from 'react-router-dom';
 import '../styles/EventListingAdding.css'
 import eventService from '../services/eventservice';
 const AddEvents = () => {
@@ -13,6 +13,7 @@ const AddEvents = () => {
 
     const navigate =  useNavigate();
     const {id} = useParams();
+    // const id = Number(localStorage.getItem('eid'));
 
     const saveOrUpdateEvent = (e) =>
      {
@@ -163,7 +164,7 @@ const AddEvents = () => {
                                 
                                 
                                 <div className = "event-form-group">
-                                    <label htmlFor= "totalTicket"> TotalTickets</label>
+                                    <label htmlFor= "totalTicket"> TotalTickets </label>
                                     <input
                                         type = "text"
                                         placeholder = "Enter total no.of.tickets"
